@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './styles/App.css';
+import './App.css';
 import { Calendar } from 'react-yearly-calendar';
-import MoodRatingBoard from './Components/MoodRating/MoodRatingBoard';
   
 class App extends Component {
 
@@ -27,28 +26,15 @@ state = {
             '2018-03-22',
             '2018-03-23',
           ]
-  }, 
-   date: ''
-}
-
-handleIconClick = (event) => {
-  event.preventDefault()
-  this.setState((prevState, props) => {
-    return {
-      date: new Date()
-    }
-  })
+  }
 }
 
   render() {
     return (
-      <div className="wrapper">
-        <Calendar 
-        year={2018}
-        customClasses={this.state.mood}
-        />
-        <MoodRatingBoard onTest={this.handleIconClick}/>
-      </div>
+      <Calendar 
+      year={2018}
+      customClasses={this.state.mood}
+      />
     );
   }
 }
