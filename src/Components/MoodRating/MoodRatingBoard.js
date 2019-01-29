@@ -8,17 +8,16 @@ class MoodRatingBoard extends Component {
     return (
         this.props.moodIconsShow ? 
         (<div className="moodRatingBoard">
-            <MoodIcon mood={'great'} fontIcon={'happy'} onIconClick={onIconClick}/>
-            <MoodIcon mood={'good'} fontIcon={'smile'} onIconClick={onIconClick} />
-            <MoodIcon mood={'meh'} fontIcon={'wondering'} onIconClick={onIconClick} />
-            <MoodIcon mood={'bad'} fontIcon={'sad'} onIconClick={onIconClick}/>
-            <MoodIcon mood={'awful'} fontIcon={'angry'} onIconClick={onIconClick}/>
+            <MoodIcon fontIcon={'happy'} onIconClick={() => this.props.onIconClick('great')}/>
+            <MoodIcon  fontIcon={'smile'} onIconClick={() => this.props.onIconClick('ok')} />
+            <MoodIcon fontIcon={'wondering'} onIconClick={() => this.props.onIconClick('meh')} />
+            <MoodIcon  fontIcon={'sad'} onIconClick={() => this.props.onIconClick('sad')}/>
+            <MoodIcon  fontIcon={'angry'} onIconClick={() => this.props.onIconClick('angry')}/>
         </div>) : ("")
     );
   }
 }
 
 export default MoodRatingBoard;
-
 
 
