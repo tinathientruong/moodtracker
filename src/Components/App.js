@@ -27,27 +27,34 @@ state = {
             '2018-03-23',
           ]
   }, 
-   date: ''
+   date: '', 
+   calendarShow: false,
+   moodIconsShow: true 
+}
+ 
+onDatePicked = (date) => {
+  alert(date);
 }
 
 handleIconClick = (event) => {
-  // event.preventDefault()
-  // this.setState((prevState, props) => {
-  //   return {
-  //     date: new Date()
-  //   }
-  // })
-  console.log(event)
+  const {calendarShow, moodIconsShow} = this.state
+  this.setState({calendarShow: !calendarShow, moodIconsShow: !moodIconsShow})
 }
 
   render() {
     return (
       <div className="wrapper">
-        <Calendar 
+       {this.state.calendarShow ? 
+        (<Calendar 
         year={2018}
         customClasses={this.state.mood}
+        calendarShow={this.state.calendarShow}
+        onPickDate={this.onDatePicked}
+        /> ):("")}
+        <MoodRatingBoard 
+        onIconClick={this.handleIconClick}
+        moodIconsShow={this.state.moodIconsShow}
         />
-        <MoodRatingBoard onTest={this.handleIconClick}/>
       </div>
     );
   }

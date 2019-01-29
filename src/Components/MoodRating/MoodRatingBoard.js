@@ -4,14 +4,16 @@ import MoodIcon from './MoodIcon';
 class MoodRatingBoard extends Component {
 
   render() {
+    const { onIconClick} = this.props; 
     return (
-        <div className="moodRatingBoard">
-            <MoodIcon mood={'great'} fontIcon={'happy'} onClick={this.props.onTest('happy')}/>
-            <MoodIcon mood={'good'} fontIcon={'smile'} onClick={this.props.onTest('smile')}/>
-            <MoodIcon mood={'meh'} fontIcon={'wondering'} onClick={this.props.onTest('wondering')}/>
-            <MoodIcon mood={'bad'} fontIcon={'sad'} onClick={this.props.onTest('sad')}/>
-            <MoodIcon mood={'awful'} fontIcon={'angry'} onClick={this.props.onTest('angry')}/>
-        </div>
+        this.props.moodIconsShow ? 
+        (<div className="moodRatingBoard">
+            <MoodIcon mood={'great'} fontIcon={'happy'} onIconClick={onIconClick}/>
+            <MoodIcon mood={'good'} fontIcon={'smile'} onIconClick={onIconClick} />
+            <MoodIcon mood={'meh'} fontIcon={'wondering'} onIconClick={onIconClick} />
+            <MoodIcon mood={'bad'} fontIcon={'sad'} onIconClick={onIconClick}/>
+            <MoodIcon mood={'awful'} fontIcon={'angry'} onIconClick={onIconClick}/>
+        </div>) : ("")
     );
   }
 }
