@@ -3,10 +3,6 @@ import MoodIcon from './MoodIcon';
 
 class MoodRatingBoard extends Component {
 
-    onIconClick = () => {
-        // passing in the state of mood 
-    }
-
   render() {
     return (
         <div className="moodRatingBoard">

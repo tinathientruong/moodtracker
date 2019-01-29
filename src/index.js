@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './Components/App';
 import {Calendar, CalendarControls} from 'react-yearly-calendar';
 import moment from 'moment';
 
