@@ -3,29 +3,54 @@ import '../styles/App.css';
 import { Calendar } from 'react-yearly-calendar';
 import moment from 'moment';
 import MoodRatingBoard from './MoodRating/MoodRatingBoard';
+import MoodCountRow from './MoodCount/MoodCountRow';
   
 class App extends Component {
 
 state = {
-  mood: {
+  moodType: {
+    great: [
+      '2019-01-01',
+      '2019-01-15',
+      '2019-01-16',
+      '2019-01-21',
+      '2019-01-25',
+      '2019-01-26'
+    ], 
+    good: [
+      '2019-01-02',
+      '2019-01-04',
+      '2019-01-11',
+      '2019-01-14',
+      '2019-01-20',
+      '2019-01-28'
+
+    ], 
+    ok: [
+      '2019-01-03',
+      '2019-01-10',
+      '2019-01-17',
+      '2019-01-18',
+      '2019-01-19',
+      '2019-01-24',
+      '2019-01-27'
+
+    ], 
     sad: [
-      '2019-04-25',
-      '2019-05-01',
-      '2019-06-02',
-      '2019-08-15',
-      '2019-11-01'
+      '2019-01-05',
+      '2019-01-06',
+      '2019-01-07',
+      '2019-01-12',
+      '2019-01-23'
+
     ],
-  angry: [
-        '2019-02-20',
-        '2019-02-21',
-        '2019-02-22',
-        '2019-02-23',
-      ],
-happy: [
-        '2019-03-20',
-        '2019-03-21',
-        '2019-03-22',
-        '2019-03-23',
+    terrible: [
+      '2019-01-08',
+      '2019-01-09',
+      '2019-01-13',
+      '2019-01-22',
+      '2019-01-29',
+      '2019-01-30'
       ]
   }, 
   
@@ -47,30 +72,42 @@ handleIconClick = (mood) => {
   // convert date using moment.js 
   const todaysDate = new Date();
   const convertedDate = moment(todaysDate).format("YYYY-MM-DD")
-  const {happy, sad, angry} = this.state.mood
+  const {great, good, ok ,sad, terrible} = this.state.moodType
 
   switch (mood){
     case 'great':
       // make a copy of the state because of immutability 
-      const newHappyList = [...happy]
+      const newGreatList = [...great]
       //push new mood into list 
-      newHappyList.push(convertedDate)
-      this.setState({ mood: {...this.state.mood, happy: newHappyList } })
+      newGreatList.push(convertedDate)
+      this.setState({ mood: {...this.state.moodType, great: newGreatList } })
       break; 
+
+    case 'good':
+      const newGoodList = [...good]
+      newGoodList.push(convertedDate)
+      this.setState({ mood: {...this.state.moodType, good: newGoodList } })
+      break; 
+
+    case 'ok':
+      const newOkList = [...ok]
+      newSadList.push(convertedDate)
+      this.setState({ mood: {...this.state.moodType, ok: newOkList } })
+      break; 
+
     case 'sad':
       const newSadList = [...sad]
       newSadList.push(convertedDate)
-      this.setState({ mood: {...this.state.mood, sad: newSadList } })
+      this.setState({ mood: {...this.state.moodType, sad: newSadList } })
       break; 
-    case 'angry':
-      const newAngryList = [...angry]
-      newAngryList.push(convertedDate)
-      this.setState({ mood: {...this.state.mood, angry: newAngryList } })
+
+    case 'terrible':
+      const newTerribleList = [...terrible]
+      newTerribleList.push(convertedDate)
+      this.setState({ mood: {...this.state.moodType, terrible: newTerribleList } })
       break; 
   }
 }
-
-
 
   render() {
     return (
@@ -78,7 +115,7 @@ handleIconClick = (mood) => {
        {this.state.calendarShow ? 
           (<Calendar 
           year={2019}
-          customClasses={this.state.mood}
+          customClasses={this.state.moodType}
           calendarShow={this.state.calendarShow}
           onPickDate={this.onDatePicked}
           /> ):
@@ -89,7 +126,7 @@ handleIconClick = (mood) => {
         onIconClick={this.handleIconClick}
         moodIconsShow={this.state.moodIconsShow}
         />
-
+        <MoodCountRow moodList={this.state.moodType}/>
       </div>
     );
   }

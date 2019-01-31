@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import MoodIcon from './MoodIcon';
+import MoodCountRow from '../MoodCount/MoodCountRow';
 
-class MoodRatingBoard extends Component {
-
-  render() {
-    const { onIconClick} = this.props; 
+const MoodRatingBoard = (props) => {
+    const { onIconClick, moodIconsShow} = props; 
     return (
-        this.props.moodIconsShow ? 
+        moodIconsShow ? 
         (<div className="moodRatingBoard">
-            <MoodIcon fontIcon={'happy'} onIconClick={() => this.props.onIconClick('great')}/>
-            <MoodIcon  fontIcon={'smile'} onIconClick={() => this.props.onIconClick('ok')} />
-            <MoodIcon fontIcon={'wondering'} onIconClick={() => this.props.onIconClick('meh')} />
-            <MoodIcon  fontIcon={'sad'} onIconClick={() => this.props.onIconClick('sad')}/>
-            <MoodIcon  fontIcon={'angry'} onIconClick={() => this.props.onIconClick('angry')}/>
+          <h1>How Are You Feeling Today?</h1>
+            <div>
+              <MoodIcon fontIcon={'happy'} onIconClick={() => onIconClick('great')}/>
+              <MoodIcon  fontIcon={'smile'} onIconClick={() => onIconClick('ok')} />
+              <MoodIcon fontIcon={'wondering'} onIconClick={() => onIconClick('meh')} />
+              <MoodIcon  fontIcon={'sad'} onIconClick={() => onIconClick('sad')}/>
+              <MoodIcon  fontIcon={'angry'} onIconClick={() => onIconClick('angry')}/>
+            </div>
         </div>) : ("")
     );
   }
-}
 
 export default MoodRatingBoard;
 

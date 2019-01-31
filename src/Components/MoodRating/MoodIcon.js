@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 
-class MoodIcon extends Component {
-  handleClick = (e) => {
+const MoodIcon = (props) => {
+  const handleClick = (e) => {
     e.stopPropagation()
-    this.props.onIconClick()
+    props.onIconClick()
   }
-
-
-  render() {
     return (
-      <button className={this.props.mood} onClick={ this.handleClick }>
-        <i className={`icon-${this.props.fontIcon}`}></i>
+      <button className={props.mood} onClick={ handleClick }>
+        <i className={`icon-${props.fontIcon}`}></i>
       </button>
     );  
   }
-}
 
 export default MoodIcon;
 

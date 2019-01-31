@@ -43,16 +43,24 @@
   text-align: center;
 }
 
-td.happy{
-  background-color: yellow
+td.great{
+  background-color: teal
 }
 
-td.angry{
-  background-color: red;
+td.good{
+  background-color: greenyellow
+}
+
+td.ok{
+  background-color: purple
 }
 
 td.sad{
   background-color: lightseagreen;
+}
+
+td.terrible{
+  background-color: palevioletred;
 }
 
 .App-logo {
@@ -77,7 +85,8 @@ td.sad{
 
 .moodRatingBoard{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .moodRatingBoard button {
