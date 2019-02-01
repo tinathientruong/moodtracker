@@ -10,10 +10,10 @@ const MoodRatingBoard = (props) => {
           <h1>How Are You Feeling Today?</h1>
             <div>
               <MoodIcon fontIcon={'happy'} onIconClick={() => onIconClick('great')}/>
-              <MoodIcon  fontIcon={'smile'} onIconClick={() => onIconClick('ok')} />
-              <MoodIcon fontIcon={'wondering'} onIconClick={() => onIconClick('meh')} />
+              <MoodIcon  fontIcon={'smile'} onIconClick={() => onIconClick('good')} />
+              <MoodIcon fontIcon={'wondering'} onIconClick={() => onIconClick('ok')} />
               <MoodIcon  fontIcon={'sad'} onIconClick={() => onIconClick('sad')}/>
-              <MoodIcon  fontIcon={'angry'} onIconClick={() => onIconClick('angry')}/>
+              <MoodIcon  fontIcon={'angry'} onIconClick={() => onIconClick('terrible')}/>
             </div>
         </div>) : ("")
     );

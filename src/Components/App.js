@@ -80,31 +80,32 @@ handleIconClick = (mood) => {
       const newGreatList = [...great]
       //push new mood into list 
       newGreatList.push(convertedDate)
-      this.setState({ mood: {...this.state.moodType, great: newGreatList } })
+      this.setState({ moodType: {...this.state.moodType, great: newGreatList } })
+      console.log(newGreatList)
       break; 
 
     case 'good':
       const newGoodList = [...good]
       newGoodList.push(convertedDate)
-      this.setState({ mood: {...this.state.moodType, good: newGoodList } })
+      this.setState({ moodType: {...this.state.moodType, good: newGoodList } })
       break; 
 
     case 'ok':
       const newOkList = [...ok]
-      newSadList.push(convertedDate)
-      this.setState({ mood: {...this.state.moodType, ok: newOkList } })
+      newOkList.push(convertedDate)
+      this.setState({ moodType: {...this.state.moodType, ok: newOkList } })
       break; 
 
     case 'sad':
       const newSadList = [...sad]
       newSadList.push(convertedDate)
-      this.setState({ mood: {...this.state.moodType, sad: newSadList } })
+      this.setState({ moodType: {...this.state.moodType, sad: newSadList } })
       break; 
 
     case 'terrible':
       const newTerribleList = [...terrible]
       newTerribleList.push(convertedDate)
-      this.setState({ mood: {...this.state.moodType, terrible: newTerribleList } })
+      this.setState({ moodType: {...this.state.moodType, terrible: newTerribleList } })
       break; 
   }
 }
