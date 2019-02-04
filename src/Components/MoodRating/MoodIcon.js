@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 const MoodIcon = (props) => {
   const handleClick = (e) => {

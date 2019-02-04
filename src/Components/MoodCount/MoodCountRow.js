@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MoodCountItem from './MoodCountItem';
 
-
 const MoodCountRow = (props) => {
-
 
     return (
         <div className="moodCount">

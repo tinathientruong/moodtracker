@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import { Calendar } from 'react-yearly-calendar';
 import moment from 'moment';
+import CalendarPage from './CalendarPage';
+import Nav from './Nav';
+import Home from './Home';
+import Blog from './Blog';
 import MoodRatingBoard from './MoodRating/MoodRatingBoard';
-import MoodCountRow from './MoodCount/MoodCountRow';
+
+import {BrowserRouter as Router,
+   Route,
+} from 'react-router-dom'
   
 class App extends Component {
 
@@ -53,9 +59,6 @@ state = {
       '2019-01-30'
       ]
   }, 
-  
-   calendarShow: false,
-   moodIconsShow: true 
 }
  
 onDatePicked = (date) => {
@@ -63,11 +66,6 @@ onDatePicked = (date) => {
 }
 
 handleIconClick = (mood) => {
-  const {calendarShow, moodIconsShow} = this.state
-  this.setState({
-    calendarShow: !calendarShow, 
-    moodIconsShow: !moodIconsShow
-  })
 
   // convert date using moment.js 
   const todaysDate = new Date();
@@ -112,28 +110,26 @@ handleIconClick = (mood) => {
 
   render() {
     return (
-      <div className="wrapper">
-       {this.state.calendarShow ? 
-          (<Calendar 
-          year={2019}
-          customClasses={this.state.moodType}
-          calendarShow={this.state.calendarShow}
-          onPickDate={this.onDatePicked}
-          /> ):
-          ("")
-        }
+      <Router>
+        <div className="wrapper">
+        <Nav/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/add-mood" render={(props) => 
+            <MoodRatingBoard 
+              onIconClick={this.handleIconClick}/>
+          }/>
 
-        <MoodRatingBoard 
-        onIconClick={this.handleIconClick}
-        moodIconsShow={this.state.moodIconsShow}
-        />
-        <MoodCountRow moodList={this.state.moodType}/>
-      </div>
+          <Route path="/calendar"  render={(props) => 
+            <CalendarPage  
+              year={2019}
+              customClasses={this.state.moodType}
+              onPickDate={this.onDatePicked}/>
+          }/>
+          <Route path="/blog" component={Blog} />
+        </div>
+      </Router>
     );
   }
 }
 
 export default App;
-
-
-
