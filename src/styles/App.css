@@ -1,4 +1,10 @@
- @font-face {
+body {
+  font-family: Roboto, sans-serif;
+}
+
+  
+
+@font-face {
   font-family: 'icomoon';
   src:  url('./fonts/icomoon.eot?f1j6cp');
   src:  url('./fonts/icomoon.eot?f1j6cp#iefix') format('embedded-opentype'),
@@ -17,6 +23,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  margin-right: 5px;
 
   /* Better Font Rendering =========== */
    -webkit-font-smoothing: antialiased;
@@ -25,18 +32,23 @@
 
 .icon-happy:before {
   content: "\e9df";
+  color: lightgreen;
 }
 .icon-smile:before {
   content: "\e9e1";
+  color: pink;
 }
 .icon-sad:before {
   content: "\e9e5";
+  color: lightblue
 }
 .icon-angry:before {
   content: "\e9ed";
+  color: red;
 }
 .icon-wondering:before {
   content: "\e9fb";
+  color: violet;
 }  
 
 .App {
@@ -44,23 +56,23 @@
 }
 
 td.great{
-  background-color: teal
+  background-color: lightgreen;
 }
 
 td.good{
-  background-color: greenyellow
+  background-color: pink;
 }
 
 td.ok{
-  background-color: purple
+  background-color: violet;
 }
 
 td.sad{
-  background-color: lightseagreen;
+  background-color: lightblue;
 }
 
 td.terrible{
-  background-color: palevioletred;
+  background-color: red;
 }
 
 .App-logo {
@@ -92,7 +104,25 @@ td.terrible{
 .moodRatingBoard button {
     border: none;
     background: transparent;
-    font-size: 30px;
+    padding-top: 10%;
+    font-size: 60px;
 
 }
 
+.moodCount {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 68%;
+  text-align: center;
+  margin-left: 16.5%;
+  margin-top: 6%;
+}
+
+.calendar {
+  margin-left: 25%;
+  margin-top: 7%;
+}
+
+h2 {
+  font-weight: 200;
+}
