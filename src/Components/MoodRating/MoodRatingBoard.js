@@ -1,6 +1,7 @@
 import React from 'react';
 import MoodIcon from './MoodIcon';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import MyList from '../Blog/MyList';
 
 const MoodRatingBoard = (props) => {
     const { onIconClick} = props; 
@@ -23,10 +24,7 @@ const MoodRatingBoard = (props) => {
           <input type="submit" value="Submit" />
         </form> */}
 
-        <div className="blog-entry">
-          <h2>Enter Today's Entry</h2>  
-          <textarea rows="4" cols="50"></textarea>
-        </div>
+          <MyList />
 
         <NavLink to="/calendar" activeClassName="selected">TRACK YOUR MOOD!</NavLink>
 
