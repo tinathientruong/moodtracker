@@ -62,7 +62,7 @@ class MyList extends Component {
 
     return (
       <div>
-        <h1>Things I need to stop procrasting on:</h1>
+        <h1>Blog Entries</h1>
         <ul>
           { allItems }
         </ul>
@@ -77,7 +77,7 @@ class MyList extends Component {
         </form>
 
         {/*</div>button onClick={ this.clearList }>Finished the List!</button>*/}
-        
+
       </div>
     );
   }
