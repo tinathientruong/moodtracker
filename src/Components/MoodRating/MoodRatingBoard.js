@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MoodIcon from './MoodIcon';
 import {Redirect} from 'react-router-dom'
- 
 
 const MoodRatingBoard= (props) => {
     const {onIconClick, formRedirect} = props;
@@ -23,10 +22,7 @@ const MoodRatingBoard= (props) => {
             <MoodIcon fontIcon={'angry'} mood={'terrible'}onIconClick={()=> onIconClick('terrible')}/>
           </fieldset>
 
-        <div className="blog-entry">
-          <h2>Enter Today's Entry</h2>  
-          <textarea rows="4" cols="50"></textarea>
-        </div>
+        <MyList/>
          <button>TRACK YOUR MOOD!</button>
           </form>
         

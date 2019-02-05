@@ -1,8 +1,7 @@
 body {
   font-family: Roboto, sans-serif;
+  background:rgba(245,251,255,1);
 }
-
-  
 
 @font-face {
   font-family: 'icomoon';
@@ -125,4 +124,58 @@ td.terrible{
 
 h2 {
   font-weight: 200;
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  color: black;
+  background: lightblue;
+  padding-bottom: 50px;
+}
+
+.navItem {
+  text-decoration: none;
+  color: black;
+  margin-top: 35px;
+}
+
+.getStarted {
+  /*display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 20%;*/
+  text-align: center;
+}
+
+.getStartedButton {
+  padding: 15px 30px;
+  background: lightblue;
+  border: none;
+  border-radius: 100px 100px 100px 100px;
+  text-decoration: none;
+  color: black;
+  margin-top: 25%;
+  position: absolute;
+}
+
+.happyLife {
+  width: 50%;
+  right: 0px;
+  position: absolute;
+}
+
+.moodioIntro {
+  float: left;
+  text-align: left;
+  position: absolute;
+  top: 200px;
+  left: 380px;
+  line-height: 52px;
+  /* font-family: roboto; */
+  font-weight: 500;
+  font-size: 20px;
 }
