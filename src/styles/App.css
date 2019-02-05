@@ -3,8 +3,6 @@ body {
   background:rgba(245,251,255,1);
 }
 
-  
-
 @font-face {
   font-family: 'icomoon';
   src:  url('./fonts/icomoon.eot?f1j6cp');
@@ -134,6 +132,8 @@ h2 {
   flex-wrap: nowrap;
   justify-content: space-evenly;
   color: black;
+  background: lightblue;
+  padding-bottom: 50px;
 }
 
 .navItem {
@@ -172,7 +172,7 @@ h2 {
   float: left;
   text-align: left;
   position: absolute;
-  top: 158px;
+  top: 200px;
   left: 380px;
   line-height: 52px;
   /* font-family: roboto; */
