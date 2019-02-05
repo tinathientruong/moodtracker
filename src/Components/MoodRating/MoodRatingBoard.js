@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MoodIcon from './MoodIcon';
 import {Redirect} from 'react-router-dom'
+import MyList from '../Blog/MyList'
 
 const MoodRatingBoard= (props) => {
     const {onIconClick, formRedirect} = props;

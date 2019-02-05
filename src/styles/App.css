@@ -54,6 +54,11 @@ body {
   text-align: center;
 }
 
+td{
+  padding: 0.3%;
+  font-size: 12px;
+}
+
 td.great{
   background-color: lightgreen;
 }
@@ -114,12 +119,12 @@ td.terrible{
   max-width: 68%;
   text-align: center;
   margin-left: 16.5%;
-  margin-top: 6%;
 }
 
 .calendar {
-  margin-left: 25%;
-  margin-top: 7%;
+  background-color: #fffacd;
+    padding: 5%;
+    width: 100%;
 }
 
 h2 {

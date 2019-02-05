@@ -18,6 +18,7 @@ const MoodIcon = (props) => {
         name="mood" 
         value={props.mood}
         onChange={handleIconClick}
+        required
         />
         <i className={`icon-${props.fontIcon}`}></i>
       </label>
