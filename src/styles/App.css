@@ -126,3 +126,10 @@ td.terrible{
 h2 {
   font-weight: 200;
 }
+
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
