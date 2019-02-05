@@ -7,9 +7,9 @@ const CalendarPage = (props) => {
         <React.Fragment>
             <Calendar 
             year={props.year}
-            customClasses={props.customClasses}
+            customClasses={props.moodList}
             />
-            <MoodCountRow moodList={props.customClasses}/> 
+            <MoodCountRow moodList={props.moodList}/> 
         </React.Fragment>
     );
   }

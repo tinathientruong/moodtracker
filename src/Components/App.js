@@ -6,10 +6,7 @@ import Nav from './Nav';
 import Home from './Home';
 import Blog from './Blog';
 import MoodRatingBoard from './MoodRating/MoodRatingBoard';
-
-import {BrowserRouter as Router,
-   Route,
-} from 'react-router-dom'
+import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom'; 
   
 class App extends Component {
 
@@ -59,27 +56,44 @@ state = {
       '2019-01-30'
       ]
   }, 
+  moodSelected:'',
+  formRedirect: false
 }
  
 onDatePicked = (date) => {
   alert(date);
 }
 
-handleIconClick = (mood) => {
+// renderFormRedirect = () => {
+//   if (this.state.formRedirect) {
+//     return <Redirect to='/calendar' />
+//   }
+// }
 
+setFormRedirect = () => {
+ 
+}
+
+
+handleIconClick = (mood)=>{
+    this.setState({ moodSelected: mood});
+}
+
+handleFormSubmit = (e) => {
+  e.preventDefault(); 
   // convert date using moment.js 
   const todaysDate = new Date();
   const convertedDate = moment(todaysDate).format("YYYY-MM-DD")
-  const {great, good, ok ,sad, terrible} = this.state.moodType
+  const {great, good, ok ,sad, terrible} = this.state.moodType; 
+  const moodSelected = this.state.moodSelected; 
 
-  switch (mood){
+  switch (moodSelected){
     case 'great':
       // make a copy of the state because of immutability 
       const newGreatList = [...great]
       //push new mood into list 
       newGreatList.push(convertedDate)
       this.setState({ moodType: {...this.state.moodType, great: newGreatList } })
-      console.log(newGreatList)
       break; 
 
     case 'good':
@@ -106,6 +120,11 @@ handleIconClick = (mood) => {
       this.setState({ moodType: {...this.state.moodType, terrible: newTerribleList } })
       break; 
   }
+
+  this.setState({
+    formRedirect: true
+  })
+
 }
 
   render() {
@@ -115,14 +134,13 @@ handleIconClick = (mood) => {
         <Nav/>
           <Route exact path="/" component={Home} />
           <Route exact path="/add-mood" render={(props) => 
-            <MoodRatingBoard 
-              onIconClick={this.handleIconClick}/>
+            <MoodRatingBoard mood={this.state.moodType} onIconClick={this.handleIconClick} onFormSubmit={this.handleFormSubmit} formRedirect={this.state.formRedirect}/>
           }/>
 
           <Route path="/calendar"  render={(props) => 
             <CalendarPage  
               year={2019}
-              customClasses={this.state.moodType}
+              moodList={this.state.moodType}
               onPickDate={this.onDatePicked}/>
           }/>
           <Route path="/blog" component={Blog} />

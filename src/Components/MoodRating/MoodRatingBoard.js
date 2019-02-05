@@ -1,34 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MoodIcon from './MoodIcon';
-import { NavLink } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
+ 
 
-const MoodRatingBoard = (props) => {
-    const { onIconClick} = props; 
+const MoodRatingBoard= (props) => {
+    const {onIconClick, formRedirect} = props;
+    if (formRedirect) {
+      return <Redirect to="/Calendar" />
+    }
     return (
       <React.Fragment>
         <div className="moodRatingBoard">
-          <h1>How Are You Feeling Today?</h1>
-
-          <div className="icon-container">
-          <MoodIcon fontIcon={'happy'} onIconClick={() => onIconClick('great')}/>
-          <MoodIcon  fontIcon={'smile'} onIconClick={() => onIconClick('good')} />
-          <MoodIcon fontIcon={'wondering'} onIconClick={() => onIconClick('ok')} />
-          <MoodIcon  fontIcon={'sad'} onIconClick={() => onIconClick('sad')}/>
-          <MoodIcon  fontIcon={'angry'} onIconClick={() => onIconClick('terrible')}/>
-          </div>
-        </div>
-              
-        {/* <form onSubmit={ this.handleSubmit }>
-          <input type="text" name="body_input" />
-          <input type="submit" value="Submit" />
-        </form> */}
+          <form onSubmit={props.onFormSubmit}>
+          <fieldset>
+            <legend>
+              <h1>How Are You Feeling Today?</h1>
+          </legend>
+            <MoodIcon fontIcon={'happy'} mood={'great'} onIconClick={()=> onIconClick('great')} />
+            <MoodIcon  fontIcon={'smile'}  mood={'good'} onIconClick={()=> onIconClick('good')} />
+            <MoodIcon fontIcon={'wondering'} mood={'ok'} onIconClick={()=> onIconClick('ok')}/>
+            <MoodIcon  fontIcon={'sad'}  mood={'sad'} onIconClick={()=> onIconClick('sad')}/>
+            <MoodIcon fontIcon={'angry'} mood={'terrible'}onIconClick={()=> onIconClick('terrible')}/>
+          </fieldset>
 
         <div className="blog-entry">
           <h2>Enter Today's Entry</h2>  
           <textarea rows="4" cols="50"></textarea>
         </div>
+         <button>TRACK YOUR MOOD!</button>
+          </form>
+        
+        </div>
 
-        <NavLink to="/calendar" activeClassName="selected">TRACK YOUR MOOD!</NavLink>
+
 
       </React.Fragment>
     );
