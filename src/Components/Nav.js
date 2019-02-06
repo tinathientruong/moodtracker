@@ -8,7 +8,7 @@ class Nav extends Component {
       <div className="navWrapper">
         <NavLink className="navItem" exact activeClassName="selected" to="/"> Home </NavLink>
         <NavLink className="navItem" to="/calendar" activeClassName="selected" > Calendar </NavLink> 
-        <NavLink className="navItem" to="/blog" activeClassName="selected"> Entries</NavLink>
+        {/* <NavLink className="navItem" to="/blog" activeClassName="selected"> Entries</NavLink> */}
       </div>
     );
   }

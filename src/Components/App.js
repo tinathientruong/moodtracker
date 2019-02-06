@@ -4,7 +4,6 @@ import moment from 'moment';
 import CalendarPage from './CalendarPage';
 import Nav from './Nav';
 import Home from './Home';
-import Blog from './Blog';
 import MoodRatingBoard from './MoodRating/MoodRatingBoard';
 import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom'; 
   
@@ -143,7 +142,6 @@ handleFormSubmit = (e) => {
               moodList={this.state.moodType}
               onPickDate={this.onDatePicked}/>
           }/>
-          <Route path="/blog" component={Blog} />
         </div>
       </Router>
     );

@@ -6,6 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div className="getStarted"> 
+          <h1>MOODIO</h1>
           <p className="moodioIntro">
           What’s the key to a happy, fulfilled life? <br/>
           Mindfulness. <br/>
@@ -14,7 +15,7 @@ class Home extends Component {
           </p>
          <img className="happyLife" src={'https://uploads-ssl.webflow.com/5bff8886c3964a992e90d465/5bff98f85ea7faf86504605e_scenes.gif'}/>
          <br/>
-         <NavLink className="getStartedButton" to="/add-mood" > Try Moodio</NavLink>
+         <NavLink className="getStartedButton" to="/add-mood" >GET STARTED</NavLink>
       </div>
     );
   }

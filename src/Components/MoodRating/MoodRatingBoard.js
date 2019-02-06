@@ -22,8 +22,7 @@ const MoodRatingBoard= (props) => {
             <MoodIcon  fontIcon={'sad'}  mood={'sad'} onIconClick={()=> onIconClick('sad')}/>
             <MoodIcon fontIcon={'angry'} mood={'terrible'}onIconClick={()=> onIconClick('terrible')}/>
           </fieldset>
-
-        <MyList/>
+        {/* <MyList/> */}
          <button>TRACK YOUR MOOD!</button>
           </form>
         
