@@ -6,6 +6,7 @@ const MoodCountItem = (props) => {
             <div className="moodCount__item__heading">
                 <h2>{props.mood}</h2>
                 <i className={`icon-${props.fontIcon}`}></i>
+                <br />
                  <span>{props.moodCount}</span> 
             </div>
         </div>

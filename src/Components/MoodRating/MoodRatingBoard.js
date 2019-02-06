@@ -14,7 +14,7 @@ const MoodRatingBoard= (props) => {
           <form onSubmit={props.onFormSubmit}>
           <fieldset>
             <legend>
-              <h1>How Are You Feeling Today?</h1>
+              <h1 className="feelingQuestion">How Are You Feeling Today?</h1>
           </legend>
             <MoodIcon fontIcon={'happy'} mood={'great'} onIconClick={()=> onIconClick('great')} />
             <MoodIcon  fontIcon={'smile'}  mood={'good'} onIconClick={()=> onIconClick('good')} />
@@ -23,7 +23,7 @@ const MoodRatingBoard= (props) => {
             <MoodIcon fontIcon={'angry'} mood={'terrible'}onIconClick={()=> onIconClick('terrible')}/>
           </fieldset>
         {/* <MyList/> */}
-         <button>TRACK YOUR MOOD!</button>
+         <button className="trackButton">Track Your Mood!</button>
           </form>
         
         </div>

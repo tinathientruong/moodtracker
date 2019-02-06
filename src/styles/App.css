@@ -32,22 +32,36 @@ body {
 .icon-happy:before {
   content: "\e9df";
   color: lightgreen;
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.icon-happy:before:focus {
+  border: 3px solid blue;
 }
 .icon-smile:before {
   content: "\e9e1";
   color: pink;
+  font-size: 36px;
+  margin-right: 10px;
 }
 .icon-sad:before {
   content: "\e9e5";
-  color: lightblue
+  color: lightblue;
+  font-size: 36px;
+  margin-right: 10px;
 }
 .icon-angry:before {
   content: "\e9ed";
   color: red;
+  font-size: 36px;
+  margin-right: 10px;
 }
 .icon-wondering:before {
   content: "\e9fb";
   color: violet;
+  font-size: 36px;
+  margin-right: 10px;
 }  
 
 .App {
@@ -103,13 +117,33 @@ td.terrible{
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 5%;
+}
+
+.feelingQuestion {
+  font-size: 23px;
+}
+
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .moodRatingBoard button {
     border: none;
     background: transparent;
     padding-top: 10%;
-    font-size: 60px;
+    font-size: 19px;
+    padding: 15px 30px;
+    background: lightblue;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    text-decoration: none;
+    color: black;
+    margin-top: 3%;
+    position: absolute;
+    margin-left: 4%;
 
 }
 
@@ -186,4 +220,8 @@ h2 {
   /* font-family: roboto; */
   font-weight: 500;
   font-size: 20px;
+}
+
+fieldset {
+  border: 0;
 }
